@@ -1,3 +1,6 @@
+
+//const mongodb = require('mongodb');
+
 const mongoURI = "mongodb://localhost:27017" + "/newsFeed"
 
 let mongoose = require('mongoose');
@@ -8,11 +11,7 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .catch(err => {
         console.log("error while connection", err)
     });
-
-
-
-
-newsArticleModel = mongoose.model('dailynews', newsArticleSchema)
+let newsArticleModel = mongoose.model('dailynews', newsArticleSchema)
 
 
 exports.newsArticleModel = newsArticleModel;
